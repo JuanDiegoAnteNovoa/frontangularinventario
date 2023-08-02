@@ -4,4 +4,5 @@ export class Producto {
     precio:string;
     cantidad_producto:string;
     descripcion:string;
+    esta_inventario:string;
 }

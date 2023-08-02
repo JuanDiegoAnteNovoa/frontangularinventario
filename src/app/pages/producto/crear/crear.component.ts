@@ -17,7 +17,9 @@ export class CrearComponent implements OnInit {
   nombre_producto: "",
   precio: "",
   descripcion: "",
-  cantidad_producto: ""
+  cantidad_producto: "",
+  esta_inventario: ""
+
   }
   constructor(private miServicioProducto: ProductoService,
     private rutaActiva: ActivatedRoute,
