@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class ListarComponent implements OnInit {
   almacenistas : Almacenistas[];
-  nombresColumnas: string[] = ['Cedula','Nombre','Apellido','Celular','Direccion','Opciones'];
+  nombresColumnas: string[] = ['Nombre','Cedula','Direccion','Celular','Opciones'];
   constructor(private miServicioAlmacenistas: AlmacenistasService, private router: Router) { }
   
   ngOnInit(): void {

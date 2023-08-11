@@ -14,7 +14,7 @@ export class CrearComponent implements OnInit {
   id_proveedor: string = "";
   intentoEnvio: boolean = false;
   elProveedor: Proveedor = {
-    nom_proveedor: "",
+    nombre: "",
     nit: "",
     direccion: "",
     telefono: ""
@@ -71,7 +71,7 @@ export class CrearComponent implements OnInit {
   }
   validarDatosCompletos():boolean{
     this.intentoEnvio=true;
-    if(this.elProveedor.nom_proveedor=="" ||
+    if(this.elProveedor.nombre=="" ||
        this.elProveedor.nit=="" ||
        this.elProveedor.telefono=="" ||
        this.elProveedor.direccion==""){

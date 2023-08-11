@@ -2,26 +2,39 @@
     <nb-card>
         <nb-card-header *ngIf="modoCreacion"> CREAR INVENTARIO </nb-card-header>
         <nb-card-header *ngIf="!modoCreacion"> ACTUALIZAR INVENTARIO </nb-card-header>
-    <nb-card-body>
-        <div class="row">
-            <div class="col-3"><label>Fecha</label></div>
-            <div class="col-9"><input class="form-control" type="text"                   
-                       [(ngModel)]="elInventario.fecha"> 
-                <p *ngIf="intentoEnvio && elInventario.fecha ">Requerido</p>  
+        <nb-card-body>
+            <div class="row">
+                <div class="col-3"><label>Nombre Inventario</label></div>
+                <div class="col-9"><input class="form-control" type="text" [(ngModel)]="elInventario.nombreinventario">
+                    <p *ngIf="intentoEnvio && elInventario.fecha ">Requerido</p>
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-3"><label>Almacenista</label></div>
-            <div class="col-9"><input class="form-control" type="text" 
-                [(ngModel)]="elInventario.almacenista">  
-                <p *ngIf="intentoEnvio && elInventario.almacenista ">Requerido</p>
+            <div class="row">
+                <div class="col-3"><label>Fecha</label></div>
+                <div class="col-9"><input class="form-control" type="text" [(ngModel)]="elInventario.fecha">
+                    <p *ngIf="intentoEnvio && elInventario.fecha ">Requerido</p>
+                </div>
             </div>
-        </div>
-        <div class="row">
-                <button *ngIf="modoCreacion"class="btn btn-primary btn-block" (click)="agregar()">Crear</button>
-                <button *ngIf="!modoCreacion"class="btn btn-primary btn-block" (click)="editar()">Actualizar</button>
-        </div>
-    </nb-card-body>
+            <br>
+            <div class="row">
+                <div class="col-3"><label>Almacenista</label></div>
+                <div class="col-9">
+
+
+                    <nb-select placeholder="Almacenistas" [(ngModel)]="elInventario.almacenista">
+
+                        <nb-option *ngFor="let item of almacenistas" value="{{item._id}}">{{item.nombre+"
+                            "+item.cedula}}</nb-option>
+
+                    </nb-select>
+
+                </div>
+
+            </div>
+            <div class="row">
+                <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="agregar()">Crear</button>
+                <button *ngIf="!modoCreacion" class="btn btn-primary btn-block" (click)="editar()">Actualizar</button>
+            </div>
+        </nb-card-body>
     </nb-card>
 </div>

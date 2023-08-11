@@ -10,33 +10,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./listar.component.scss']
 })
 export class ListarComponent implements OnInit {
-  proveedor : Proveedor[];
-  nombresColumnas: string[] = ['Nombre','Nit', 'Direccion', 'Telefono','Opciones'];
+  proveedor: Proveedor[];
+  nombresColumnas: string[] = ['Nombre', 'Nit', 'Direccion', 'Telefono', 'Opciones'];
   constructor(private miServicioProveedor: ProveedorService, private router: Router) { }
-  
+
   ngOnInit(): void {
     this.listar();
- 
+
   }
 
-  listar():void{
+  listar(): void {
     this.miServicioProveedor.listar().
       subscribe(data => {
-      this.proveedor=data;
-    });
+        this.proveedor = data;
+      });
   }
 
-  agregar():void{
+  agregar(): void {
     console.log("agregando nuevo")
     this.router.navigate(["pages/proveedor/crear"]);
   }
 
-  editar(id:string):void{
-    console.log("editando a "+id)
-    this.router.navigate(["pages/proveedor/actualizar/"+id]);
+  editar(id: string): void {
+    console.log("editando a " + id)
+    this.router.navigate(["pages/proveedor/actualizar/" + id]);
   }
 
-  eliminar(id:string):void{
+  eliminar(id: string): void {
     Swal.fire({
       title: 'Eliminar proveedor',
       text: "Está seguro que quiere eliminar el proveedor?",
@@ -45,6 +45,18 @@ export class ListarComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Si, eliminar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.miServicioProveedor.eliminar(id).
+          subscribe(data => {
+            Swal.fire(
+              'Eliminado!',
+              'El Almacenista ha sido eliminada correctamente',
+              'success'
+            )
+            this.ngOnInit();
+          });
+      }
     })
   }
 }

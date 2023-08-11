@@ -16,7 +16,7 @@ export class InventarioService {
       return this.http.get<Inventario[]>(`${environment.url_gateway}/inventario`);}
       
   eliminar(id:string){
-      return this.http.delete<Inventario>(`${environment.url_gateway}/inventario/${id}`,);
+      return this.http.delete<Inventario>(`${environment.url_gateway}/inventario/${id}`);
   }
   getInventario(id: string): Observable<Inventario> {
     return this.http.get<Inventario>(`${environment.url_gateway}/inventario/${id}`);

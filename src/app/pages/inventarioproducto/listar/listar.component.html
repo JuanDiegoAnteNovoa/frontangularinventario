@@ -16,13 +16,13 @@
                     <td>{{inventarioproductoActual.producto.precio}} </td>                    
                     <td>{{inventarioproductoActual.producto.descripcion}} </td>                    
                     <td>
-                        <button type="button" class="btn btn-primary" (click)="gestion(inventarioproductoActual._id)"> 
+                        <!-- <button type="button" class="btn btn-primary" (click)="gestion(inventarioproductoActual._id)"> 
                             <i class="fas fa-list"></i>
                         </button>
                         <button type="button" class="btn btn-primary" (click)="editar(inventarioproductoActual._id)"> 
                             <i class="fas fa-pencil-alt"></i> 
-                        </button>
-                        <button type="button" class="btn btn-danger"  (click)="eliminar(inventarioproductoActual._id)"> 
+                        </button> -->
+                        <button type="button" class="btn btn-danger"  (click)="eliminar(inventarioproductoActual._id,inventarioproductoActual.producto._id)"> 
                             <i class="fas fa-solid fa-trash"></i> 
                         </button>
                     </td>

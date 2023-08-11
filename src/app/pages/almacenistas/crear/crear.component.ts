@@ -16,7 +16,6 @@ export class CrearComponent implements OnInit {
   elAlmacenista: Almacenistas = {
     cedula: "",
     nombre: "",
-    apellido: "",
     celular: "",
     direccion: ""
   }
@@ -66,7 +65,7 @@ export class CrearComponent implements OnInit {
             'El Almacenista ha sido actualizado correctamente',
             'success'
           )
-          this.router.navigate(["pages/Almacenistas/listar"]);
+          this.router.navigate(["pages/almacenistas/listar"]);
         });
     }
   }
@@ -74,7 +73,6 @@ export class CrearComponent implements OnInit {
     this.intentoEnvio=true;
     if(this.elAlmacenista.cedula=="" ||
        this.elAlmacenista.nombre=="" ||
-       this.elAlmacenista.apellido=="" ||
        this.elAlmacenista.celular=="" ||
        this.elAlmacenista.direccion==""){
       return false;

@@ -1,6 +1,6 @@
 export class Proveedor {
     _id?:string;
-    nom_proveedor?:string;
+    nombre?:string;
     nit?:string;
     direccion?:string;
     telefono?:string

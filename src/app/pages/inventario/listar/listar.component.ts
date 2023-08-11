@@ -13,7 +13,7 @@ import { AlmacenistasService } from '../../../servicios/almacenistas.service';
 })
 export class ListarComponent implements OnInit {
   inventario : Inventario[];
-  nombresColumnas: string[] = ['Fecha','Almacenista'];
+  nombresColumnas: string[] = ['Fecha','Almacenista',"Nombre Inventario","Opciones"];
   constructor(private miServicioInventario: InventarioService,private miAlmacenistaService:AlmacenistasService , private router: Router) { }
   
   ngOnInit(): void {

@@ -14,11 +14,11 @@ export class CrearComponent implements OnInit {
   id_producto: string = "";
   intentoEnvio: boolean = false;
   elProducto: Producto = {
-  nombre_producto: "",
+  nombre: "",
   precio: "",
   descripcion: "",
-  cantidad_producto: "",
-  esta_inventario: ""
+  cantidad: "",
+  esta_inventario: "0"
 
   }
   constructor(private miServicioProducto: ProductoService,
@@ -29,15 +29,18 @@ export class CrearComponent implements OnInit {
       if (this.rutaActiva.snapshot.params.id_producto) {
         this.modoCreacion = false;
         this.id_producto = this.rutaActiva.snapshot.params.id_producto;
-        this.getProducto(this.id_producto)
+        console.log(this.id_producto);
+        this.getProducto(this.id_producto);
       } else {
         this.modoCreacion = true;
       }
     }
+
+    
     getProducto(id: string) {
-    this.miServicioProducto.getProducto(id).
-    subscribe(data => {
-    this.elProducto = data;
+    this.miServicioProducto.getProducto(id).subscribe(data => {    
+      console.log(data);
+      this.elProducto = data;
     });
     }
     agregar(): void {
@@ -71,9 +74,9 @@ export class CrearComponent implements OnInit {
     validarDatosCompletos():boolean{
       this.intentoEnvio=true;
       if(this.elProducto._id=="" ||
-        this.elProducto.nombre_producto=="" ||
+        this.elProducto.nombre=="" ||
         this.elProducto.precio=="" ||
-        this.elProducto.cantidad_producto=="" ||
+        this.elProducto.cantidad=="" ||
         this.elProducto.descripcion==""){
         return false;
       }else{
