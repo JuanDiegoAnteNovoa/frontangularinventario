@@ -33,7 +33,7 @@ export class CrearComponent implements OnInit {
   private listar(): void {
     this.miServicioProducto.listar().
       subscribe(data => {
-        this.productoLista = data.filter(p => p.esta_inventario === "0");
+        this.productoLista = data;
       });
   }
 
