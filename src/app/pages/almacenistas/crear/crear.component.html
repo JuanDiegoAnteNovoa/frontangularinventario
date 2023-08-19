@@ -20,7 +20,7 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-3"><label>direccion</label></div>
+            <div class="col-3"><label>Direccion</label></div>
             <div class="col-9">
                 <input class="form-control" type="text"
                        [(ngModel)]="elAlmacenista.direccion">
@@ -29,13 +29,14 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-3"><label>celular</label></div>
+            <div class="col-3"><label>Celular</label></div>
             <div class="col-9">
                 <input class="form-control" type="text"
                        [(ngModel)]="elAlmacenista.celular">
                 <p *ngIf="intentoEnvio && elAlmacenista.celular ">Requerido</p>
             </div>
         </div>
+        <br>
         <div class="row">
                 <button *ngIf="modoCreacion"class="btn btn-primary btn-block" (click)="agregar()">Crear</button>
                 <button *ngIf="!modoCreacion"class="btn btn-primary btn-block" (click)="editar()">Actualizar</button>

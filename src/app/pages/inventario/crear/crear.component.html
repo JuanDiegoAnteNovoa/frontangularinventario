@@ -9,6 +9,7 @@
                     <p *ngIf="intentoEnvio && elInventario.fecha ">Requerido</p>
                 </div>
             </div>
+            <br>
             <div class="row">
                 <div class="col-3"><label>Fecha</label></div>
                 <div class="col-9"><input class="form-control" type="text" [(ngModel)]="elInventario.fecha">
@@ -31,7 +32,7 @@
                 </div>
 
             </div>
-            <div class="row">
+<br>            <div class="row">
                 <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="agregar()">Crear</button>
                 <button *ngIf="!modoCreacion" class="btn btn-primary btn-block" (click)="editar()">Actualizar</button>
             </div>

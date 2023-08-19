@@ -4,7 +4,7 @@
         <nb-card-header *ngIf="!modoCreacion">ACTUALIZAR PROVEEDOR</nb-card-header>
     <nb-card-body>
         <div class="row">
-            <div class="col-3"><label>Nit</label></div>
+            <div class="col-3"><label>Nit (Codigo)</label></div>
             <div class="col-9"><input class="form-control" type="text" 
                         [(ngModel)]="elProveedor.nit">
                 <p *ngIf="intentoEnvio && elProveedor.nit">Requerido</p>

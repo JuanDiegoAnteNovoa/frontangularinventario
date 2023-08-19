@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     }
     this.miServicioSeguridad.login(elUsuario).subscribe(
       data=>{
-        this.router.navigate(['pages/dashboard']);
+        this.router.navigate(['pages/almacenistas/listar']);
         this.miServicioSeguridad.guardarDatosSesion(data);
     },
     error=>{

@@ -1,34 +1,38 @@
 <div class="col-lg-12">
     <nb-card>
-        <nb-card-header> AÑADIR PRODUCTO AL INVENTARIO
-            <!-- <button type="button" class="btn btn-success" (click)="agregar()">
-                <i class="fas fa-plus"></i>
-            </button> -->
-        </nb-card-header>
+        <nb-card-header *ngIf="modoCreacion"> CREAR INVENTARIO </nb-card-header>
+        <nb-card-header *ngIf="!modoCreacion"> ACTUALIZAR INVENTARIO </nb-card-header>
         <nb-card-body>
+            
+
             <div class="row">
-                <table class="table">
-                    <tr>
-                        <th *ngFor="let columaActual of nombresColumnas">{{columaActual}}</th>
-                    </tr>
-                    <ng-container *ngFor="let producto of productoLista">
-                        <tr>
-                            <td>{{producto.cantidad}} </td>                    
-                            <td>{{producto.nombre}} </td>                    
-                            <td>{{producto.precio}} </td>                    
-                            <td>{{producto.descripcion}} </td>                    
-                            <td>
-                                <button type="button" class="btn btn-primary" (click)="addtoinventory(producto._id)"> 
-                                    <i class="fas fa-plus-square"></i>
-                                </button>
-                               
-                            </td>
-                        </tr>
-                    </ng-container>
-                </table>
+                <div class="col-3"><label>Producto</label></div>
+                <div class="col-9">
+                    <nb-select placeholder="Selecciona un Producto" [(ngModel)]="elInventarioProducto.producto">
+                        <nb-option *ngFor="let item of productoLista" value="{{item._id}}">{{item.nombre+"
+                            "+item.descripcion}}</nb-option>
+                    </nb-select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3"><label>Cantidad</label></div>
+                <div class="col-9"><input class="form-control" type="text" [(ngModel)]="elInventarioProducto.cantidad">
+                    <p *ngIf="intentoEnvio && elInventarioProducto.cantidad ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-3"><label>Observaciones</label></div>
+                <div class="col-9"><input class="form-control" type="text" [(ngModel)]="elInventarioProducto.observacion">
+                    <p *ngIf="intentoEnvio && elInventarioProducto.observacion ">Requerido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="agregar()">Crear</button>
+                <button *ngIf="!modoCreacion" class="btn btn-primary btn-block" (click)="editar()">Actualizar</button>
             </div>
         </nb-card-body>
-        
-        <!-- -->
     </nb-card>
-</div> 
+</div>

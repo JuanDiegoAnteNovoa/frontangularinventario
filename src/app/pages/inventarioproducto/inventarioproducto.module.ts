@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { InventarioproductoRoutingModule } from './inventarioproducto-routing.module';
 import { CrearComponent } from './crear/crear.component';
 import { ListarComponent } from './listar/listar.component';
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbSelectModule } from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 
 
@@ -17,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     InventarioproductoRoutingModule,
     NbCardModule,
-    FormsModule
+    FormsModule,
+    NbSelectModule
   ]
 })
 export class InventarioproductoModule { }

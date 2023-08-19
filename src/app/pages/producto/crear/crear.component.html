@@ -7,43 +7,38 @@
             <nb-card-body>
                 <div class="row">
                     <div class="col-3">
-                        <label>nombre_producto</label>
+                        <label>Producto</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control" type="text"
                             [(ngModel)]="elProducto.nombre">
-                        <p *ngIf="intentoEnvio && elProducto.nombre'' 
-">Requerido</p>
+                        <p *ngIf="intentoEnvio && elProducto.nombre'' ">Requerido</p>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-3">
-                        <label>precio</label>
+                        <label>Precio</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control" type="text" [(ngModel)]="elProducto.precio">
-                        <p *ngIf="intentoEnvio && elProducto.precio''
-    
-">Requerido</p>
+                        <p *ngIf="intentoEnvio && elProducto.precio''">Requerido</p>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-3">
-                        <label>cantidad_producto</label>
+                        <label>Cantidad producto</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control" type="text" [(ngModel)]="elProducto.cantidad">
-                        <p *ngIf="intentoEnvio && elProducto.cantidad''
-
-">Requerido</p>
+                        <p *ngIf="intentoEnvio && elProducto.cantidad''">Requerido</p>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-3">
-                        <label>descripcion</label>
+                        <label>Descripcion</label>
                     </div>
                     <div class="col-9">
                         <input class="form-control" type="text" [(ngModel)]="elProducto.descripcion">
@@ -54,14 +49,8 @@
                 </div>
                 <br>
                 <div class="row">
-                    <button *ngIf="modoCreacion" class="btn btn-primary btn-
-block" (click)="agregar()">
-                        Crear
-                    </button>
-                    <button *ngIf="!modoCreacion" class="btn btn-primary btn-
-block" (click)="editar()">
-                        Actualizar
-                    </button>
+                    <button *ngIf="modoCreacion" class="btn btn-primary btn-block" (click)="agregar()">                        Crear                    </button>
+                    <button *ngIf="!modoCreacion" class="btn btn-primary btn-block" (click)="editar()">                        Actualizar                    </button>
                 </div>
             </nb-card-body>
     </nb-card>

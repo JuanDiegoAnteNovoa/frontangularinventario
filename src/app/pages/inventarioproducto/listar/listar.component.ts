@@ -11,7 +11,7 @@ import { ProductoService } from '../../../servicios/producto.service';
 })
 export class ListarComponent implements OnInit {
   inventarioproducto : Inventarioproducto[];
-  nombresColumnas : string[] = ['cantidad','descripcion','precio','nombre','opciones'];
+  nombresColumnas : string[] = ['cantidad','descripcion','precio','nombre','Cantidad','Observacion','opciones'];
   id_inventarioproducto: string = "";
   
   constructor(private miServicioProducto: ProductoService,private miServicioInventarioproducto: InventarioproductoService,private rutaActiva: ActivatedRoute, private router: Router) { }
@@ -47,8 +47,8 @@ export class ListarComponent implements OnInit {
         this.miServicioInventarioproducto.eliminar(id).
           subscribe(data => {
             this.miServicioProducto.getProducto(idproducto).subscribe(producto => {
-              producto.esta_inventario = "0"
-              this.miServicioProducto.editar(idproducto, producto).subscribe();
+              // producto.esta_inventario = "0"
+              // this.miServicioProducto.editar(idproducto, producto).subscribe();
             });
 
             Swal.fire(
